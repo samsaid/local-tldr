@@ -1,8 +1,9 @@
 # Local TLDR
 
 > A privacy-first Chrome Extension that summarizes any webpage locally — no AI APIs, no backend, no data leaves your machine.
+
 Demo Screenshots:
-> <img width="385" height="581" alt="Screenshot 2026-05-22 at 3 50 32 PM" src="https://github.com/user-attachments/assets/5226b9f5-1e8d-4f90-b974-2afe7032eadf" />
+<img width="385" height="581" alt="Screenshot 2026-05-22 at 3 50 32 PM" src="https://github.com/user-attachments/assets/5226b9f5-1e8d-4f90-b974-2afe7032eadf" />
 <img width="386" height="579" alt="Screenshot 2026-05-22 at 3 50 38 PM" src="https://github.com/user-attachments/assets/69febc76-ab5d-42bf-aae5-bfe9dc12f64e" />
 
 ---
