@@ -105,16 +105,16 @@ function summarize(text, { numSummary = 3, numKeyPoints = 4 } = {}) {
     idx,
   }));
 
-  // Sort by score descending, take top N, then re-sort by original position
-  const topForSummary = scored
-    .slice()
-    .sort((a, b) => b.score - a.score)
+  const byScore = scored.slice().sort((a, b) => b.score - a.score);
+
+  const topForSummary = byScore
     .slice(0, numSummary)
     .sort((a, b) => a.idx - b.idx);
 
-  const topForKeyPoints = scored
-    .slice()
-    .sort((a, b) => b.score - a.score)
+  // Key points draw from sentences NOT already used in the TLDR
+  const usedIdx = new Set(topForSummary.map(s => s.idx));
+  const topForKeyPoints = byScore
+    .filter(s => !usedIdx.has(s.idx))
     .slice(0, numKeyPoints)
     .sort((a, b) => a.idx - b.idx);
 
