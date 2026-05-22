@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local TLDR</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────── -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">T</div>
+      <span>Local TLDR</span>
+    </div>
+    <span class="badge">
+      <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M2.5 4V3a2 2 0 1 1 4 0v1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      100% Local
+    </span>
+  </header>
+
+  <!-- ── Main ───────────────────────────────────────── -->
+  <main class="main">
+
+    <button id="summarize-btn" class="btn-primary">Summarize Page</button>
+
+    <!-- Loading -->
+    <div id="loading" class="loading-state hidden">
+      <div class="spinner" aria-hidden="true"></div>
+      <span>Analyzing page…</span>
+    </div>
+
+    <!-- Error -->
+    <div id="error" class="error-state hidden" role="alert">
+      <svg class="error-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M8 5v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="8" cy="11" r="0.75" fill="currentColor"/>
+      </svg>
+      <p id="error-msg"></p>
+    </div>
+
+    <!-- Results -->
+    <div id="results" class="results hidden">
+
+      <p id="page-title" class="page-title" title=""></p>
+
+      <section class="result-card">
+        <h2 class="card-label">TLDR</h2>
+        <p id="tldr-text" class="card-body"></p>
+      </section>
+
+      <section class="result-card">
+        <h2 class="card-label">Key Points</h2>
+        <ul id="key-points" class="key-points-list"></ul>
+      </section>
+
+      <section class="result-card hidden" id="acronyms-card">
+        <h2 class="card-label">Acronyms</h2>
+        <dl id="acronyms-list" class="acronyms-list"></dl>
+      </section>
+
+      <button id="copy-btn" class="btn-copy">Copy Summary</button>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer class="footer">
+    No data leaves your browser
+  </footer>
+
+  <script src="summarizer.js"></script>
+  <script src="acronyms.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

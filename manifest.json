@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Local TLDR",
+  "version": "1.0.0",
+  "description": "Privacy-first page summarizer. Everything runs locally in your browser — no data ever leaves your machine.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Local TLDR — Summarize this page"
+  }
+}
